@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Digital Artisan Labs | Engineering Intelligent Systems for Data, Observability, and Fairness.">
+    <meta name="author" content="Digital Artisan Labs">
+    <title>Digital Artisan Labs | Intelligent Systems Engineering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="logo" id="logo-text">Digital Artisan Labs</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-label">Intelligence Engineered with Rigor</div>
+        <h1>Digital Artisan Labs</h1>
+        <p>An engineering studio building production-grade solutions for data interaction, real-time observability, and AI ethics.</p>
+    </header>
+
+    <!-- Products Section -->
+    <section id="products" class="section">
+        <div class="section-header">
+            <h2>The Ecosystem</h2>
+            <p>Institutional-grade tools for the modern AI enterprise.</p>
+        </div>
+        <div class="grid">
+            <!-- Product 1: QueryInsight -->
+            <div class="card">
+                <span class="card-tag">Data Interaction</span>
+                <h3>QueryInsight</h3>
+                <p>An automated NL-to-SQL engine that translates complex natural language queries into production-ready relational database statements.</p>
+                <a href="https://govardhan.dev/queryinsight" class="card-link" target="_blank">Explore Product →</a>
+            </div>
+
+            <!-- Product 2: Observo -->
+            <div class="card">
+                <span class="card-tag">Observability</span>
+                <h3>Observo</h3>
+                <p>A comprehensive OTel-native platform for real-time LLM observability, tracking latency, cost, and hallucination metrics at scale.</p>
+                <a href="https://govardhan.dev/observo" class="card-link" target="_blank">Access Dashboard →</a>
+            </div>
+
+            <!-- Product 3: Chiral -->
+            <div class="card">
+                <span class="card-tag">AI Ethics</span>
+                <h3>Chiral</h3>
+                <p>Research-driven image generation pipeline focused on mitigating laterality and anatomical bias in state-of-the-art diffusion models.</p>
+                <a href="https://govardhan.dev/chiral" class="card-link" target="_blank">View Research →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="section about">
+        <div class="about-content">
+            <span class="hero-label">Our Mission</span>
+            <h2>Bridging Research <br>and Reliability.</h2>
+            <p>At Digital Artisan Labs, we architect intelligence with mathematical precision. We solve the gap between raw AI research and the reliability requirements of production software.</p>
+            <p style="color: var(--text-primary); font-weight: 600;">We build for a future where AI is observable, ethical, and engineered with absolute rigor.</p>
+        </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <footer id="contact" class="footer">
+        <div class="footer-grid">
+            <div class="footer-column footer-info">
+                <a href="#" class="logo">Digital Artisan Labs</a>
+                <p style="color: var(--text-secondary); margin-top: 1.5rem; max-width: 350px;">Engineering intelligent systems for the modern enterprise.</p>
+            </div>
+            <div class="footer-column">
+                <h4>PRODUCT SUITE</h4>
+                <a href="https://govardhan.dev/chiral" target="_blank">Chiral</a>
+                <a href="https://govardhan.dev/queryinsight" target="_blank">QueryInsight</a>
+                <a href="https://govardhan.dev/observo" target="_blank">Observo</a>
+            </div>
+            <div class="footer-column">
+                <h4>CONNECT</h4>
+                <a href="https://govardhan.dev" target="_blank">Founder Portfolio</a>
+                <a href="https://github.com/Digital-Artisan-Labs" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/amanpandit" target="_blank">LinkedIn</a>
+                <a href="https://x.com/your_handle" target="_blank">X</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; <span id="year"></span> Digital Artisan Labs. All rights reserved.</div>
+            <div>Built by Digital Artisan Labs.</div>
+        </div>
+    </footer>
+
+    <script>
+        // Fix Refresh Issue
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
+        // Update Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Subtle Scroll Reveal
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
